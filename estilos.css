@@ -1,5 +1,5 @@
 /*Selectores tipo tag*/
-body { background: url("images/numeroaureo.jpg") #FFFFCC ; cursor: url(images/cursor02.png) 16 8, auto; }
+body { background: url("images/numeroaureo.jpg") #FFFFCC ; cursor: url("images/cursor02.png") 16 8, auto; }
 h1 { text-align:center ; font: normal bold 19px verdana, arial ; }
 h2 { text-align:center ; font: normal bold 17px verdana, arial ; }
 h3 { font: normal bolder 15px verdana, arial ; }
