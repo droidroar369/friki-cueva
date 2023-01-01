@@ -15,7 +15,7 @@ aside { background-color:#FFE4B5 ; width:20% ; float:right ; text-align:center ;
 section { border:4px double orange ; }
 header { background-color:lime ; }
 footer { background-color:#DEB887 ; text-align:center ; }
-article { background-color:rgba(224, 255, 255, 0.74) ; }
+article { background-color:rgba(224, 255, 255, 0.92) ; }
 form { text-align:center ; }
 article, aside, figure, footer, header, hgroup, nav, section { display:block ; }
 td { border:3px groove #22BC30 ; }
