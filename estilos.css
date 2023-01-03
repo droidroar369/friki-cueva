@@ -1,31 +1,44 @@
 /*Selectores tipo tag*/
-body { background: url("images/numeroaureo.jpg") #FFFFCC ; }
+body { background: url("numeroaureo.jpg") #FFFFCC ; }
+
 h1 { text-align:center ; font: normal bold 19px verdana, arial ; }
 h2 { text-align:center ; font: normal bold 17px verdana, arial ; }
 h3 { font: normal bolder 15px verdana, arial ; }
 h4 { font: normal 900 13px verdana, arial ; }
+
 p { text-align:justify ; text-indent:18px ; margin:10px ; }
+
 a { color:blue ; }
 a:link { text-decoration:blink ; color:blue ; }
 a:visited { color:red ; text-decoration:through ; }
 a:hover { color:blue ; background-color:silver ; }
 a:active { color:red ; background-color:silver ; text-decoration:underline ; }
-nav { background-color:#66FFCC ; width:25% ; float:left ; }
-aside { background-color:#FFE4B5 ; width:20% ; float:right ; text-align:center ; }
-section { border:4px double orange ; }
+
+nav { background-color:#66FFCC ; width:25% ; float:left ; margin: 10px 20px 10px 5px; }
+aside { background-color:#FFE4B5 ; width:20% ; float:right ; text-align:center ; margin: 10px 5px 10px 20px; position:relative; }
+section { border:4px double orange ; margin: 10px 5px 10px 5px; }
 header { background-color:lime ; }
 footer { background-color:#DEB887 ; text-align:center ; }
 article { background-color:rgba(224, 255, 255, 0.92) ; }
+
 form { text-align:center ; }
 article, aside, figure, footer, header, hgroup, nav, section { display:block ; }
 td { border:3px groove #22BC30 ; }
 img { position:relative ; }
 
+
+
+
+
 /*Selectores tipo id*/
-#constantes { background-color:#ADD8E6 ; float:right ; width:30% ; }
+#constantes { background-color:#ADD8E6 ; float:right ; width:30% ; padding: 10px 5px; margin: 10px 5px 10px 20px; }
 #titulo { text-align:center ; font: normal bold 24px verdana, arial ; }
 #fondoresultados { background-color:#7DECA4 ; }
 #cambiopags { text-align:center ; background-color:lime ; }
+
+
+
+
 
 /*Selectores tipo class*/
 .tablacentral { position:relative ; left:25% ; }
