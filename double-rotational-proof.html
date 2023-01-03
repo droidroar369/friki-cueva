@@ -1,0 +1,353 @@
+﻿<!DOCTYPE html>
+<html>
+
+
+<head>
+
+
+<link rel="shortcut icon" href="../images/mrC.png">
+<title>Double rotational identity proof | Friki Cueva</title>
+<meta name="description" content="Website about mahts, programming, theoretical physics and much more." />
+
+
+<script type="text/javascript" src="../mijquery.js"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+<link href="../estilos.css" rel="StyleSheet" type="text/css"/>
+<!--Poner mas cosas-->
+
+
+</head>
+
+
+
+<body>
+<a name="arriba"></a>
+
+<!--Cabecera de pagina-->
+<header>
+<h1 id="titulo">La Friki Cueva</h1>
+<p>Wellcome to the <a href="https://droidroar369.github.io/friki-cueva/" title="Main Page">Friki Cueva</a>, a site about mathematics, programming, theoretical physics and much more!!! Here i will be posting demonstrations, theorems, and some applications in physics, also i write about programming and a lot of topics more. I promise that you'll enjoy the journey!!!</p>
+<p><b>PD: you have to have enabled JavaScript to see the mathematical equations and the animations.</b></p>
+</header>
+
+
+
+<!--Constantes matematicas-->
+<div id="constantes">
+<h2>Constantes famosas</h2>
+<ul>
+<li>$$\pi=3.1415926535897932384626...$$</li>
+<li>$$e=2.7182818284590454323...$$</li>
+<li>$$\phi=1.618033988...$$</li>
+</ul>
+</div>
+
+
+<!--Cueva del aprendizaje-->
+<article>
+<h1>Double rotacional identity through exterior derivative</h1>
+<p>The double rotational identity</p>
+
+$$\vec\nabla\times(\vec\nabla\times\vec F)= \vec\nabla(\vec\nabla\cdot \vec F)- \nabla^2\vec F$$
+
+<p>usually is prooved through an identity of the Levi-Civita symbol. That identity often is presented without a proof because it requires some techniques of Linear Algebra. In this article, we proof the identity through properties of exterior derivative.</p>
+
+<h2>Symbology</h2>
+<ul>
+    <li>\(*F\) Hodge dual of tensor field \(F\)</li>
+    <li>\(\omega\wedge\tau\) is the exterior product of differential forms</li>
+    <li>\(dF\) Exterior derivative of <i>k</i>-form \(F\)</li>
+    <li>\( \iota_X F\) contraction of tensor <i>F</i> in direction of vector field \(\vec X\), i.e., \( \iota_X F= F(X,...)\)</li>
+    <li>\( \mathcal L_X F\) Lie derivative of tensor <i>F</i> in direction of vector field \(\vec X\)</li>
+</ul>
+
+<p>The rotational is a vectorial operator that only applies in 3D vector fields, which we can write as follows</p>
+
+$$\vec F= F_x\hat x+ F_y\hat y+ F_z\hat z$$
+
+<p>where \(\hat x\), \(\hat y\) y \(\hat z\) are the canonical basis vector in cartesian coordinates.</p>
+
+
+
+<!--Menu de navegacion-->
+<nav>
+<h2>Lista de temas selectos</h2>
+<ul>
+<li><b>Matem&aacute;ticas 1: lógica y demostraciones</b></li>
+<ol>
+<li><a href="../logic/logica01.html" title="Principios de básicos" rel="first">Principios de Matem&aacute;ticas: abstracci&oacute;n, simbolizaci&oacute;n y definiciones</a></li>
+</ol>
+<li><b>Álgebra</b></li>
+<ul><li>Pr&oacute;ximamente...</li></ul>
+<li><b>Cálculo</b></li>
+<ul><li>Pr&oacute;ximamente...</li></ul>
+</ul>
+</nav>
+
+
+<section>
+<h2>Proof of the theorem</h2>
+
+<p>First, we identify the basis vector as basis covectors, because exterior derivative only applies on <i>k</i>-forms. The trivial way
+to change vectors into covectors in cartesian coordinates is</p>
+
+$$\hat x \mapsto dx$$
+$$\hat y \mapsto dy$$
+$$\hat z \mapsto dz$$
+
+<p>Thus, we change the vector field \(\vec F\) by its equivalent covector form (we use Einstein notation)</p>
+
+$$F= F_x\ dx+ F_y\ dy+ F_z\ dz= F_i\ dx^i$$
+
+<p>The rotational is the exterior derivative applied on 1-forms, but the result of apply ext. derivative over 1-forms is a 2-form, 
+    thus we have to convert the result of the derivative into a 1-form, preserving the components of covector. The way to convert 
+    2-forms into 1-forms (in 3D spaces) preserving components is by means of the Hodge dual</p>
+
+$$*(dx\wedge dy) = dz$$
+$$*(dx\wedge dz) = -dy$$
+$$*(dy\wedge dz) = dx$$
+
+<p>Then, under Hodge duality, the rotational of <i>F</i> can be expresed as follows</p>
+
+$$\vec\nabla\times \vec F= *dF$$
+
+<p>Now, we apply 2 times the rotational</p>
+
+$$\vec\nabla\times(\vec\nabla\times\vec F)= *d(*dF)= *d( *(dF_i\wedge dx^i) )=$$
+
+<p>Because both \(dF_i\) and \(dx^i\) are 1-forms, we use the identity \(*(\alpha\wedge\beta)= \iota_{\hat\beta}(*\alpha)\) (see 
+    <a href="#lemma1">lemma 1</a>), where \(\hat\beta\) is the vectorial equivalent to the 1-form \(\beta\) (remember, \(dx\) 
+    equivales to \(\hat x\), \(dy\) to \(\hat y\) and \(dz\) to \(\hat z\)). To simplify the notation, 
+    we use the partial-derivative version of a vector field: the basis vectors change to partial derivatives 
+    \(\hat x_i= \partial_i\). Then:</p>
+
+$$= *d\iota_{\partial_i}(*dF_i) =$$
+
+<p>We use the Cartan's magical formule to convert \(d\iota_X \omega= \mathcal L_X\omega -\iota_X d\omega\)</p>
+
+$$= *[\mathcal L_{\partial_i}(*dF_i) -\iota_{\partial_i}d(*dF_i)]=$$
+
+<p>If the vector field <i>X</i> within the Lie derivative has constant components (like in the case of the basis 
+    vectors \(X_i=\partial_i\)), then Hodge dual conmutes with the derivative (see <a href="#lemma2">lemma 2</a>):</p>
+
+$$= *[*\mathcal L_{\partial_i}(dF_i) -\iota_{\partial_i}d(*dF_i)]=$$
+
+<p>By linearity of dual Hodge, we can distribute the minus sign. In the first term, we use that in three dimensions, \(**\omega=
+\omega\), and next, we use that exterior derivative always conmutes with Lie derivative</p>
+
+$$= **\mathcal L_{\partial_i}(dF_i) -*\iota_{\partial_i}d(*dF_i)= d\mathcal L_{\partial_i}(F_i) -*\iota_{\partial_i}d(*dF_i)=$$
+
+<p>Because \(F_i\) are scalars, Lie derivative is simply the partial derivative:</p>
+
+$$= d(\partial_i F^i) -*\iota_{\partial_i}d(*dF_i)=$$
+
+<p>In the first term appears naturally the divergence of <i>F</i> (remember that Einstein notation represents a sum). In the second 
+one, we use that the \(F_i\) are scalars, and then the laplacian can be expresed as \(\nabla^2f= *d(*df)\)</p>
+
+$$= d(\vec\nabla\cdot\vec F) -*\iota_{\partial_i}(**d(*dF_i))= d(\vec\nabla\cdot\vec F) -*\iota_{\partial_i}(*\nabla^2F_i)=$$
+
+<p>The Hodge dual of a  scalar is always a volume form, in 3D: \(*1=dx\wedge dy\wedge dz\). By linearity of dual Hodge and tensor 
+    contraction, we can conmute the scalar term \(\nabla^2F_i\)</p>
+
+$$= d(\vec\nabla\cdot\vec F) -(\nabla^2F_i) *\iota_{\partial_i}(dx\wedge dy\wedge dz)=$$
+
+<p>Finally, we use the identity \(*\iota_{\partial_i}(dV)= dx^i\) (see <a href="#lemma3">lemma 3</a>) for a volume form \(dV=dx^1\wedge...\wedge dx^n\)</p>
+
+$$= d(\vec\nabla\cdot\vec F) -\nabla^2F_i\ dx^i$$
+
+<p>If we want the result as a vector, then we have to change the \(dx^i\) basis into vectors \(\hat x_i\). The vectorial version 
+of the ext. derivative \(df\) of a scalar is the gradient \(\vec\nabla f\), thus</p>
+
+$$\therefore \vec\nabla\times(\vec\nabla\times\vec F)= \vec\nabla(\vec\nabla\cdot\vec F) -\nabla^2F_i\ \hat x^i
+= \vec\nabla(\vec\nabla\cdot\vec F) -\nabla^2\vec F$$
+
+<p>Q.E.D. \(\blacksquare\)</p>
+
+</section>
+
+
+
+<!--Lemmas-->
+
+<section>
+<a name="lemma1"></a>
+<h2>Lemma 1</h2>
+
+<p>Let be &alpha; y &beta; 1-forms in \(\mathbb R^n\). Then</p>
+
+$$*(\alpha\wedge\beta)= \iota_{\hat\beta}(*\alpha)$$
+
+<p>where \(\hat\beta\) is the associated vector to &beta;, i.e., if \(\beta= \beta_i dx^i\), then \(\hat\beta= \beta_i \hat x^i\).</p>
+
+
+<p><b>Proof:</b> due to linearity of Hodge dual, it suffices to prove the lemma in the basis covectors \(\alpha= dx^i\) 
+    and \(\beta= dx^j\) with \(i< j\). The dual Hodge is defined in basis <i>k</i>-forms such that</p>
+
+$$\alpha\wedge *\alpha = dV= dx^1\wedge ...\wedge dx^n$$
+
+<p>Then, the Hodge we are looking for is</p>
+
+$$*(\alpha\wedge\beta)= *(dx^i\wedge dx^j)= (-1)^{i+j-1}dx^1\wedge... dx^{i-1}\wedge dx^{i+1}\wedge...dx^{j-1}\wedge
+dx^{j+1}\wedge...dx^n$$
+
+<p>We see that the dual of \(dx^i\wedge dx^j\) is the product of all the \(dx^k\) except when <i>k=i</i> or <i>k=j</i>, and a 
+\((-1)^{i+j-1}\) sign to preserve right-orientation of the volume form \(dV\). On the other hand, the dual of &alpha; is</p>
+
+$$*\alpha= *dx^i= (-1)^{i-1}dx^1\wedge... dx^{i-1}\wedge dx^{i+1}\wedge...dx^n$$
+
+<p>I.e., \(*\alpha\) equals the product of all the \(dx^k\) except <i>k=i</i>, together with a sign \((-1)^{i-1}\) to 
+preserve orientation. The equivalent vector to \(\beta=dx^j\) is \(\hat\beta= \hat x_j\), then if we apply tensor contraction</p>
+
+$$\iota_{\hat\beta}(*\alpha)= (-1)^{i-1}(dx^1\wedge... dx^{i-1}\wedge dx^{i+1}\wedge...dx^n)[\hat x_j, ...]$$
+
+<p>In the last step, square brakets mean the vectorial entries of tensor, and due to contraction the vector \(\hat x_j\) 
+is applied at first entry. By antisymmetry of <i>k</i>-forms, we can conmute the first entry to place it at <i>j</i>-th position</p>
+
+$$\Longrightarrow \iota_{\hat\beta}(*\alpha)= (-1)^{i-1}(-1)^{j-2}(dx^1\wedge... dx^{i-1}\wedge dx^{i+1}\wedge... \underbrace{dx^j}_{j\text{-th}}
+\wedge... dx^n)[..., \underbrace{\hat x_j}_{j\text{-th}}, ...]$$
+
+<p>The \((-1)^{j-2}=(-1)^j\) sign appears because we have to conmute <i>j-2</i> times the first entry: <i>j-1</i> times 
+to place at <i>j</i>-th position, minus one entry due that there is not \(dx^i\) factor. Now, both the \(\hat x_j\) vector and the 
+term \(dx^j\) are at <i>j</i>-th position, then we can apply directly \(dx^j(\hat x_j)\). By properties of differentials, \(dx^j(\hat x_j)=1\), thus</p>
+
+$$\Longrightarrow \iota_{\hat\beta}(*\alpha)= (-1)^{i+j-1}(dx^1\wedge... dx^{i-1}\wedge dx^{i+1}\wedge...dx^{j-1}\wedge 
+dx^{j+1}\wedge... dx^n)[...] = *(dx^i\wedge dx^j)$$
+
+<p>This ends the proof for the case \(\alpha=dx^i\) and \(\beta=dx^j\). By linearity of Hodge dual and tensor contractions, 
+it extends to the more general case of 1-forms. \(\blacksquare\)</p>
+
+</section>
+
+
+<section>
+<a name="lemma2"></a>
+<h2>Lemma 2</h2>
+
+<p>Let be <i>X</i> a vector field with constant coefficients respect to a coordinate basis, i.e., \(X=c^i \partial_i\). If \(\omega\) 
+is a <i>k</i>-form in \(\mathbb R^n\), then</p>
+
+$$\mathcal L_X(*\omega)= *\mathcal L_X\omega$$
+
+<p><b>Proof:</b> due to linearity of Hodge dual and Lie derivative, we prove the theorem only in the case of basis vectors \(X=\partial_j\):</p>
+
+$$\mathcal L_{\partial_j}(*\omega)= \mathcal L_{\partial_j}(*(\omega_I dx^I)) =\mathcal L_{\partial_j}(\omega_I *dx^I)$$
+
+<p>We use the notation \(dx^I\) instead of \(dx^{i_1}\wedge...\wedge dx^{i_k}\) to represent <i>k</i>-forms merely to simplify writing, same for 
+coefficients \(\omega_I= \omega_{i_1...i_k}\) (we are still using Einstein's notation). By Leibnitz rule of product</p>
+
+$$ =(\mathcal L_{\partial_j}\omega_I) *dx^I+ \omega_I \mathcal L_{\partial_j}(*dx^I)= *(\mathcal L_{\partial_j}\omega_I\ dx^I)+ \omega_I \mathcal L_{\partial_j}(*dx^I)$$
+
+<p>In the first term we have used the fact that dual Hodge conmutes scalars. The second term is zero, because 
+\(\mathcal L_{\partial_i}(dx^{j_1}\wedge...\wedge dx^{j_p})=0\) for every <i>p</i>-form. We prove this by induction over <i>p</i>. For \(p=1\), 
+we have a single diferential and we can conmute derivatives:</p>
+
+$$\mathcal L_{\partial_i}(dx^j)= d\mathcal L_{\partial_i}x^j= d(\partial_i x^j)= d\delta_i^j= 0$$
+
+<p>The last was zero because Kronecker delta is always a constant (0 or 1). We supose true for <i>p</i>, then we'll prove for <i>p+1</i>:</p>
+
+$$\mathcal L_{\partial_i}(dx^{j_1}\wedge...\wedge dx^{j_p}\wedge dx^{j_{p+1}})= \mathcal L_{\partial_i}(dx^{j_1}\wedge...\wedge dx^{j_p})\wedge dx^{j_{p+1}}
++ dx^{j_1}\wedge...\wedge dx^{j_p}\wedge \mathcal L_{\partial_i}(dx^{j_{p+1}})$$
+
+$$= 0\wedge dx^{j_{p+1}} + dx^{j_1}\wedge...\wedge dx^{j_p}\wedge 0 = 0$$
+
+<p>The first term is zero by induction hypothesis, and the second one is the case <i>p=1</i>. Therefore, \(\mathcal L_{\partial_i}(dx^{j_1}\wedge...\wedge dx^{j_p})=0\) for every <i>p</i>-form. Then, if we apply this last result:</p>
+
+$$\Longrightarrow \mathcal L_{\partial_j}(*dx^I)= \mathcal L_{\partial_j}((-1)^\sigma dx^{j_1}\wedge...\wedge dx^{j_{n-k}})= 0$$
+
+<p>Where the \(j_k\) indexes are such that \( \{j_1,...,j_{n-k}\}\cap \{i_1,...,i_k\} =\emptyset\), i.e., the \(j_k\) indexes are all distincts to the \(i_k\)'s. The \((-1)^\sigma\) 
+sign is to preserve orientation and is irrelevant here. Similarly, we can prove that</p>
+
+$$\mathcal L_{\partial_j}(dx^I)= \mathcal L_{\partial_j}(dx^{i_1}\wedge...\wedge dx^{i_k})= 0$$
+
+<p>Returning to the original problem:</p>
+
+$$\Longrightarrow \mathcal L_{\partial_j}(*\omega)= *(\mathcal L_{\partial_j}\omega_I\ dx^I)+ \omega_I \mathcal L_{\partial_j}(*dx^I)=
+*(\mathcal L_{\partial_j}\omega_I\ dx^I)+ 0= *(\mathcal L_{\partial_j}\omega_I\ dx^I+ \omega_I\underbrace{\mathcal L_{\partial_j}(dx^I)}_0)$$
+
+$$= *(\mathcal L_{\partial_j}(\omega_I\ dx^I))= *\mathcal L_{\partial_j}\omega$$
+
+<p>By linearity of Lie derivative respect to constant vector fields, we can complete the proof</p>
+
+$$\therefore \mathcal L_{c^j\partial_j}(*\omega)= c^j\mathcal L_{\partial_j}(*\omega)= *c^j\mathcal L_{\partial_j}\omega= *\mathcal L_{c^j\partial_j}\omega$$
+
+<p>\(\blacksquare\)</p>
+
+</section>
+
+
+
+
+<section>
+<a name="lemma3"></a>
+<h2>Lemma 3</h2>
+
+<p>Let be \(dV= dx^1\wedge...\wedge dx^n\) a volume form in \(\mathbb R^n\). Then</p>
+
+$$*\iota_{\partial_i}(dV)= (-1)^{n-1}dx^i$$
+
+<p><b>Proof:</b> Apply definition of tensor contraction and then the Hodge dual</p>
+
+$$*\iota_{\partial_i}(dV)= *((dx^1\wedge...\wedge dx^n)[\partial_i,...])= $$
+
+<p>Conmute first entry <i>i-1</i> times to place it at <i>i</i>-th position (remember that due to antisymmetry, each conmutation changes the sign)</p>
+
+$$= *((-1)^{i-1}(dx^1\wedge...\wedge \underbrace{dx^i}_{i\text{-th}}\wedge... dx^n)[..., \underbrace{\partial_i}_{i\text{-th}}, ...])= $$
+
+<p>Again, if an entry and a factor term are at same position, we can apply directly \(dx^i(\partial_i)=1\) and contract the tensor</p>
+
+$$= *((-1)^{i-1}(dx^1\wedge...dx^{i-1}\wedge dx^{i+1}\wedge... dx^n)[...])= $$
+
+<p>The tensor within the Hodge dual is the dual of \(dx^i\), and due that in <i>n</i> dimensions \(**\alpha=(-1)^{n-1}\alpha\) for 1-forms &alpha;</p>
+
+$$=**dx^i =(-1)^{n-1}dx^i$$
+
+<p>In particular, for <i>n=3</i>, \(*\iota_{\partial_i}(dV)= dx^i\). \(\blacksquare\)</p>
+
+
+</section>
+
+
+<div id="cambiopags"><b>Ir a otros temas</b><br>
+<a href="javascript: alert('El tema a\u00FAn no ha sido publicado. No dejes de vistarnos, pronto subiremos nuevo contenido.');" title="Siguiente tema" rel="next">&#9658;</a></div>
+</article>
+
+
+
+
+<!--Paginas recomendadas-->
+<aside>
+<h3>Friki Cueva</h3>
+<a href="https://droidroar369.github.io/friki-cueva/" title="Main Page" rel="author">  <img src="../images/mrC.png" width="128px" height="128px" alt="Logo de FrikiCueva">  </a>
+<p>Enjoy this site!!!</p>
+
+
+<h3>Droid Roar</h3>
+<a href="https://www.youtube.com/@droidroar" title="YT/Droid Roar" rel="author"> <img src="../images/logo01.png" width="128px" height="128px" alt="Logo de Droid Roar"> </a>
+<p>Visit my YT channel!!!</p>
+
+
+<h3>Dark Roar</h3>
+<a href="https://www.youtube.com/@darkroar369" title="YT/Dark Roar" rel="author">  <img src="../images/dark-logo01.png" width="128px" height="128px" alt="Logo de Dark Roar">  </a>
+<p>Also visit my Dark YT channel!!!</p>
+
+</aside>
+
+
+
+
+<!--Pie de pagina-->
+<footer>
+<h3>Autor y copyright</h3>
+<p>Friki Cueva/Droid Roar &copy; 2023 Copyright. You can copy the information and images within the page, but quote us when you use it. I will thank you for that. :)</p>
+<script type="text/javascript">
+document.write('<b>Ultima modificacion: '+window.document.lastModified+'</b><br />');
+</script>
+<a href="#arriba" title="Ir arriba">Ir arriba</a><br />
+</footer>
+
+
+</body>
+</html>
+
