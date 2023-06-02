@@ -1,5 +1,6 @@
 /*Selectores tipo tag*/
 body { background: url("images/numeroaureo.jpg") #FFFFCC ; }
+body.dark { color:#FFFF82; background: url("images/doodles-7673298_640.webp") #131d3b ; }
 
 h1 { text-align:center ; font: normal bold 32px calligra, verdana ; }
 h2 { text-align:center ; font: normal bold 26px calligra, verdana ; }
@@ -9,17 +10,30 @@ h4 { font: normal 900 16px calligra, verdana ; }
 p { text-align:justify ; text-indent:18px ; margin:10px ; }
 
 a { color:blue ; }
+a.dark { color:cyan ; }
 a:link { text-decoration:blink ; color:blue ; }
 a:visited { color:red ; text-decoration:through ; }
 a:hover { color:blue ; background-color:silver ; }
 a:active { color:red ; background-color:silver ; text-decoration:underline ; }
 
+
 nav { background-color:#66FFCC ; width:25% ; float:left ; margin: 10px 20px 10px 5px; }
+nav.dark { background-color:#630e23 ; width:25% ; float:left ; margin: 10px 20px 10px 5px; }
+
 aside { background-color:#FFE4B5 ; width:20% ; float:right ; text-align:center ; margin: 10px 5px 10px 20px; position:relative; }
+aside.dark { background-color:#054d52 ; width:20% ; float:right ; text-align:center ; margin: 10px 5px 10px 20px; position:relative; }
+
 section { border:4px double orange ; margin: 10px 5px 10px 5px; }
+section.dark { border:4px double rgb(112, 209, 136) ; margin: 10px 5px 10px 5px; }
+
 header { background-color:lime ; }
+header.dark { background-color:rgb(75, 38, 124) ; }
+
 footer { background-color:#DEB887 ; text-align:center ; }
+footer.dark { background-color:#0b2d44 ; text-align:center ; }
+
 article { background-color:rgba(224, 255, 255, 0.92) ; }
+article.dark { background-color:rgba(82, 52, 47, 0.92) ; }
 
 form { text-align:center ; }
 article, aside, figure, footer, header, hgroup, nav, section { display:block ; }
@@ -33,7 +47,7 @@ img { position:relative ; }
 /*Selectores tipo id*/
 #constantes { background-color:#ADD8E6 ; float:right ; width:30% ; padding: 10px 5px; margin: 10px 5px 10px 20px; }
 #titulo { text-align:center ; font: normal bold 42px chilanka, verdana ; }
-#fondoresultados { background-color:#7DECA4 ; }
+#fondoresultados { background-color:#7decbe ; }
 #cambiopags { text-align:center ; background-color:lime ; }
 
 
@@ -43,6 +57,11 @@ img { position:relative ; }
 /*Selectores tipo class*/
 .tablacentral { position:relative ; left:25% ; }
 .resaltado { font-weight:bold ; background-color:yellow ; }
+.dark-resaltado { font-weight:bold ; background-color:rgb(116, 47, 47) ; }
 .importante1{ color:blue ; background-color:#FFFF82 ; font: normal normal 15px arial,verdana ; }
+.dark-importante1{ color:lime ; background-color:#1c2435 ; font: normal normal 15px arial,verdana ; }
 .img_der{ float:right ; background-color:#FD94A6 ; width:25% ; text-align:center ; }
+.dark-img_der{ float:right ; background-color:#0b3f18 ; width:25% ; text-align:center ; }
 .definition { border:3px solid black ; text-align:center ; width:60% ; position:relative ; left:20% ; background-color:white ; }
+.dark-definition { border:3px solid rgb(233, 219, 27) ; text-align:center ; width:60% ; position:relative ; left:20% ; background-color:rgb(54, 51, 51) ; }
+
