@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Import from Blender</title>
+    <script src="https://aframe.io/releases/1.4.1/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.0.0/dist/aframe-extras.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+    <a-assets>
+      <a-asset-item id="obelisc" src="obelisc/icosaedron.glb"></a-asset-item>
+    </a-assets>
+    
+    
+    <a-entity gltf-model="#obelisc" animation-mixer></a-entity>
+    <a-sky color="#4e4ed8"></a-sky>
+    </a-scene>
+
+
+  </body>
+</html>
