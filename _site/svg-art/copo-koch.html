@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta http-equiv=”Content-Type” content=”text/html; charset=UTF-8″ /> <!--Para poner acentos y otras cosas-->
+<title>Copo de Koch</title>
+<!--Mas codigos descriptivos-->
+<style>
+p { font:normal normal 24px Purisa;
+width:60%;
+text-align:justify;
+position:relative;
+color:yellow;
+left:20%; }
+b {font-weight:bold; color:fuchsia;}
+h1 { width:60%;
+text-align:center;
+position:relative;
+left:20%; }
+li { font:normal normal 21px Purisa;
+color:orange;
+background:#E8E8E8;
+width:60%;
+position:relative;
+left:20%;
+list-style-position:inside; }
+canvas {  }
+</style>
+</head>
+
+<body onload="dibujaKoch()">
+
+<script>
+//Objetos tipo triangulo
+function triangulo(x1,y1,ang,long,or)
+{ this.x1=x1; this.y1=y1; this.ang=ang; this.long=long; this.or=or;
+this.x2=this.x1+this.long*Math.cos(this.ang*Math.PI/180); this.y2=this.y1-this.long*Math.sin(this.ang*Math.PI/180);
+this.x3=this.x1+this.long*Math.cos((this.ang+60)*Math.PI/180); this.y3=this.y1-this.long*Math.sin((this.ang+60)*Math.PI/180);}
+
+//Dibujar el triangulo
+triangulo.prototype.draw= function(ctx) {
+ctx.beginPath();
+//Moverse a vertice 1
+ctx.moveTo(this.x1,this.y1);
+//Avanza a vertice 2
+ctx.lineTo(this.x2,this.y2);
+//Avanza a vertice 3
+ctx.lineTo(this.x3,this.y3);
+ctx.closePath();
+ctx.fill();
+}
+
+triangulo.prototype.addTriangs= function(obj) {
+
+switch(this.or) {
+  case 0: //Se dibujan triangulos sobre los 3 lados
+    obj.push(new triangulo(this.x1+2*this.long*Math.cos(this.ang*Math.PI/180)/3,this.y1-2*this.long*Math.sin(this.ang*Math.PI/180)/3,180+this.ang, this.long/3,3)); //Triangulito nuevo en lado 3
+    obj.push(new triangulo(this.x2+2*this.long*Math.cos((120+this.ang)*Math.PI/180)/3,this.y2-2*this.long*Math.sin((120+this.ang)*Math.PI/180)/3, 300+this.ang,this.long/3,3)); //Triangulito nuevo en lado 1
+    obj.push(new triangulo(this.x3+2*this.long*Math.cos((240+this.ang)*Math.PI/180)/3,this.y3-2*this.long*Math.sin((240+this.ang)*Math.PI/180)/3, 60+this.ang,this.long/3,3)); //Triangulito nuevo en lado 2
+    break;
+
+  case 3: //Se dibujan triangulos sobre solo 2 lados, mas 2 triangulos adicionales junto a 2 lados del triangulo
+     obj.push(new triangulo(this.x2+2*this.long*Math.cos((120+this.ang)*Math.PI/180)/3,this.y2-2*this.long*Math.sin((120+this.ang)*Math.PI/180)/3, 300+this.ang,this.long/3,3)); //Triangulito nuevo en lado 1
+    obj.push(new triangulo(this.x3+2*this.long*Math.cos((240+this.ang)*Math.PI/180)/3,this.y3-2*this.long*Math.sin((240+this.ang)*Math.PI/180)/3, 60+this.ang,this.long/3,3)); //Triangulito nuevo en lado 2
+    
+    obj.push(new triangulo(this.x2+this.long*Math.cos(this.ang*Math.PI/180)/3,this.y2-this.long*Math.sin(this.ang*Math.PI/180)/3,this.ang,this.long/3, 3)); //Triangulito junto a vertice 2
+    obj.push(new triangulo(this.x1-2*this.long*Math.cos(this.ang*Math.PI/180)/3,this.y1+2*this.long*Math.sin(this.ang*Math.PI/180)/3,this.ang, this.long/3,3)); //Triangulito junto a vertice 1
+  break; }
+}
+
+function dibujaKoch() {
+ctx=document.getElementById("koch").getContext('2d');
+
+//#AFEB80
+ctx.fillStyle="#FFAB60";
+ctx.fillRect(0,0,500,500);
+//ctx.fillStyle="#99FFFF";
+var grd = ctx.createRadialGradient(250, 350-200/Math.sqrt(3), 0, 250, 350-200/Math.sqrt(3), 275);
+grd.addColorStop(0, "#99FFFF");
+grd.addColorStop(0.6, "#FFFFFF");
+grd.addColorStop(1, "#88FFFF");
+ctx.fillStyle=grd;
+
+var T0=new triangulo(50,350,0,400,0);
+var arr=[T0];
+
+for(k=0; k<5; k++) {
+let ar=[];
+for(j=0; j<arr.length;j++) { arr[j].addTriangs(ar); arr[j].draw(ctx); }
+arr=ar;
+}
+
+}
+
+</script>
+
+<canvas id="koch" width="500" height="500">jaja</canvas>
+
+</body>
+</html>

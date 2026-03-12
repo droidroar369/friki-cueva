@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Canvas Example</title>
+	<style>
+		canvas {
+			border: 1px solid black;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="myCanvas" width="400" height="400"></canvas>
+	<script>
+		const canvas = document.getElementById('myCanvas');
+		const ctx = canvas.getContext('2d');
+		
+		// Draw the background
+		ctx.fillStyle = 'black';
+		ctx.fillRect(0, 0, canvas.width, canvas.height);
+		
+		// Draw the candle flame
+		ctx.beginPath();
+		ctx.arc(200, 200, 60, 0, 2*Math.PI);
+		ctx.fillStyle = 'yellow';
+		ctx.shadowBlur = 50;
+		ctx.shadowColor = 'yellow';
+		ctx.fill();
+		
+		// Draw the candle base
+		ctx.beginPath();
+		ctx.arc(200, 270, 40, 0, 2*Math.PI);
+		ctx.fillStyle = 'white';
+		ctx.shadowBlur = 0;
+		ctx.fill();
+		
+		// Draw the hand
+		ctx.beginPath();
+		ctx.moveTo(120, 250);
+		ctx.lineTo(280, 250);
+		ctx.quadraticCurveTo(290, 250, 290, 260);
+		ctx.lineTo(290, 330);
+		ctx.quadraticCurveTo(290, 340, 280, 340);
+		ctx.lineTo(220, 340);
+		ctx.quadraticCurveTo(210, 340, 210, 330);
+		ctx.lineTo(210, 270);
+		ctx.quadraticCurveTo(210, 260, 220, 260);
+		ctx.lineTo(200, 250);
+		ctx.lineTo(180, 260);
+		ctx.quadraticCurveTo(180, 270, 180, 270);
+		ctx.lineTo(180, 330);
+		ctx.quadraticCurveTo(180, 340, 170, 340);
+		ctx.lineTo(110, 340);
+		ctx.quadraticCurveTo(100, 340, 100, 330);
+		ctx.lineTo(100, 260);
+		ctx.quadraticCurveTo(100, 250, 110, 250);
+		ctx.fillStyle = 'yellow';
+		ctx.shadowBlur = 10;
+		ctx.shadowColor = 'yellow';
+		ctx.fill();
+	</script>
+</body>
+</html>
+
