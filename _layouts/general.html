@@ -3,20 +3,20 @@
 
 
 <head>
+<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 
-
-<link rel="shortcut icon" href="images/faviconcueva.ico">
+<link rel="shortcut icon" href="{{site.baseurl}}/images/mrC.png">
 <title>{{page.title}}</title>
 <meta name="description" content="Website about mahts, programming, theoretical physics and much more." />
 
 
-<script type="text/javascript" src="mijquery.js"></script>
+<script type="text/javascript" src="{{site.baseurl}}/mijquery.js"></script>
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script type="text/javascript" src="change-theme.js"></script>
+<script type="text/javascript" src="{{site.baseurl}}/change-theme.js"></script>
 
 
-<link href="estilos.css" rel="StyleSheet" type="text/css"/>
-<!--Poner mas cosas-->
+<link href="{{site.baseurl}}/estilos.css" rel="StyleSheet" type="text/css"/>
 
 
 </head>
@@ -30,15 +30,15 @@
   <button id="toggle-theme" value="Dark/Light" onclick="change_theme()"></button>
 </div>
 
-<!--Cabecera de pagina-->
+<!--Header-->
 <header>
 <h1 id="titulo">La Friki Cueva</h1>
-<p>Wellcome to the Friki Cueva, a site about mathematics, programming, theoretical physics and much more!!! Here i will be posting demonstrations, theorems, and some applications in physics, also i write about programming and a lot of topics more. I promise that you'll enjoy the journey!!!</p>
+<p>Wellcome to the <a href="{{site.baseurl}}/">Friki Cueva</a>, a site about mathematics, programming, theoretical physics and much more!!! Here i will be posting demonstrations, theorems, and some applications in physics, also i write about programming and a lot of topics more. I promise that you'll enjoy the journey!!!</p>
 <p><b>PD: you should enable JavaScript to see the mathematical equations and the animations.</b></p>
 </header>
 
 
-<!--Constantes matematicas-->
+<!--Mathematical constants-->
 <div id="constantes">
 <h2>Constantes famosas</h2>
 <ul>
@@ -49,46 +49,36 @@
 </div>
 
 
-<!--Cueva del aprendizaje-->
+<!--Content of article-->
 <article>
 
-<!--Menu de navegacion-->
-<nav>
-<h2>Lista de temas selectos</h2>
-<ul>
-<li><b>Matem&aacute;ticas 1: lógica y demostraciones</b></li>
-<ol>
-<li><a href="logic/logica01.html" title="Principios de básicos" rel="first">Principios de Matem&aacute;ticas: abstracci&oacute;n, simbolizaci&oacute;n y definiciones</a></li>
-</ol>
-<li><b>Álgebra</b></li>
-<ul><li>Pr&oacute;ximamente...</li></ul>
-<li><b>Cálculo</b></li>
-<ul><li>Pr&oacute;ximamente...</li></ul>
-</ul>
-</nav>
 
 {{content}}
 
 
 </article>
 
-<!--Paginas recomendadas-->
+
+<!--Recomended pages-->
 <aside>
-<h3>Droid Roar</h3>
-<a href="https://www.youtube.com/@droidroar" title="YT/Droid Roar" rel="author"> <img src="images/logo01.png" width="128px" height="128px" alt="Logo de Droid Roar"> </a>
+<h3>Friki Cueva</h3>
+<a href="{{site.baseurl}}/" title="Friki Cueva" rel="author"> <img src="{{site.baseurl}}/images/mrC.png" width="128px" height="128px" alt="Logo de la Friki Cueva"> </a>
+<p>Enjoy this site!!!</p>
+
+<h3>El Droide Roto</h3>
+<a href="https://www.youtube.com/@droideroto" title="YT/Droide Roto" rel="author"> <img src="{{site.baseurl}}/images/logo01.png" width="128px" height="128px" alt="Logo del Droide Roto"> </a>
 <p>Visit my YT channel!!!</p>
 
-
-<h3>Dark Roar</h3>
-<a href="https://www.youtube.com/@darkroar369" title="YT/Dark Roar" rel="author">  <img src="images/dark-logo01.png" width="128px" height="128px" alt="Logo de Dark Roar">  </a>
-<p>Also visit my Dark YT channel!!!</p>
+<h3>Droid Roar</h3>
+<a href="https://www.youtube.com/@droid_roar" title="YT/Droid Roar" rel="author">  <img src="{{site.baseurl}}/images/dark-logo01.png" width="128px" height="128px" alt="Logo de Droid Roar">  </a>
+<p>Also visit my alt YT channel!!!</p>
 
 </aside>
 
 
 
 
-<!--Pie de pagina-->
+<!--Footer-->
 <footer>
 <h3>Autor y copyright</h3>
 <p>Friki Cueva/Droid Roar &copy; 2023 Copyright. You can copy the information and images within the page, but quote us when you use it. I will thank you for that. :)</p>

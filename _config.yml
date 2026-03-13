@@ -1,0 +1,9 @@
+collections:
+  logic:
+    name: Lógica
+    output: true
+  
+  problems:
+    name: Problemas
+    output: true
+  
